@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Texture2D" path="res://assets/tiles_autotile.png" id="1"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="3"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("3")
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+cell_quadrant_size = 16
+
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector2(80, 120)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+[node name="Controls" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="Left" type="TouchScreenButton" parent="UI/Controls"]
+position = Vector2(40, 200)
+texture_normal = preload("res://assets/btn.png")
+action = "ui_left"
+[node name="Right" type="TouchScreenButton" parent="UI/Controls"]
+position = Vector2(120, 200)
+texture_normal = preload("res://assets/btn.png")
+action = "ui_right"
+[node name="Up" type="TouchScreenButton" parent="UI/Controls"]
+position = Vector2(80, 160)
+texture_normal = preload("res://assets/btn.png")
+action = "ui_up"
+[node name="Down" type="TouchScreenButton" parent="UI/Controls"]
+position = Vector2(80, 240)
+texture_normal = preload("res://assets/btn.png")
+action = "ui_down"

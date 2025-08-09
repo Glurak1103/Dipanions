@@ -1,0 +1,6 @@
+config_version=5
+[application]
+config/name="Dipanions Autotile"
+run/main_scene="res://world.tscn"
+[rendering]
+textures/canvas_textures/default_texture_filter=0
